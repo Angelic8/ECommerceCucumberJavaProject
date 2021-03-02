@@ -41,7 +41,12 @@ public class ECommerceCucumberTestCases {
         String regEx = "(TN\\d+)";
         Pattern pattern = Pattern.compile(regEx);
         Matcher match = pattern.matcher(actualTransactionMessage);
-        System.out.println("Matcher: " + match);
+
+        while(match.find()){
+            System.out.println("matched group: " + match.group(1));
+        }
+
+
         /*
         String strLowerCase = transactionMessage.toLowerCase();
         System.out.println("Lower " + strLowerCase);
